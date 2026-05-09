@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Maria Murad — AI Engineer & Full-Stack Developer",
     description:
       "Building production-grade Agentic AI systems, LLM-powered apps, and full-stack platforms. Based in Karachi, Pakistan.",
-    url: "https://maria-murad-portfolio.vercel.app",
+    url: "https://my-latest-maria-murad-portfolio.vercel.app",
     siteName: "Maria Murad Portfolio",
     locale: "en_US",
     type: "website",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description:
       "Building production-grade Agentic AI systems, LLM-powered apps, and full-stack platforms.",
   },
-  metadataBase: new URL("https://maria-murad-portfolio.vercel.app"),
+  metadataBase: new URL("https://my-latest-maria-murad-portfolio.vercel.app"),
 };
 
 export default function RootLayout({
