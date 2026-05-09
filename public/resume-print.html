@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Maria Murad — Resume</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 10.5pt;
+    color: #111827;
+    background: #fff;
+    line-height: 1.5;
+  }
+
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 44px;
+  }
+
+  /* PRINT BUTTON */
+  .print-btn {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    background: #0d9488;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 2px 10px rgba(13,148,136,.4);
+  }
+  .print-btn:hover { background: #0f766e; }
+
+  /* HEADER */
+  header {
+    border-bottom: 3px solid #0d9488;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 28pt;
+    font-weight: 800;
+    color: #111827;
+    letter-spacing: -0.5px;
+  }
+  h1 span { color: #0d9488; }
+  .title-line {
+    font-size: 11.5pt;
+    color: #0d9488;
+    font-weight: 600;
+    margin-top: 3px;
+  }
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    margin-top: 10px;
+    font-size: 9.5pt;
+    color: #4b5563;
+  }
+  .contact-row a { color: #0d9488; text-decoration: none; }
+
+  /* SECTIONS */
+  section { margin-bottom: 18px; }
+
+  h2 {
+    font-size: 9.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #0d9488;
+    border-bottom: 1px solid #d1fae5;
+    padding-bottom: 4px;
+    margin-bottom: 12px;
+  }
+
+  /* SUMMARY */
+  .summary-text { color: #374151; font-size: 10pt; line-height: 1.6; }
+
+  /* STATS */
+  .stats {
+    display: flex;
+    gap: 0;
+    margin-top: 10px;
+    border: 1px solid #d1fae5;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .stat {
+    flex: 1;
+    text-align: center;
+    padding: 10px 6px;
+    border-right: 1px solid #d1fae5;
+  }
+  .stat:last-child { border-right: none; }
+  .stat .num { font-size: 16pt; font-weight: 800; color: #0d9488; }
+  .stat .lbl { font-size: 7.5pt; color: #6b7280; margin-top: 1px; }
+
+  /* EXPERIENCE */
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .job-title { font-size: 11pt; font-weight: 700; }
+  .job-company { font-size: 10pt; color: #0d9488; font-weight: 600; margin-top: 1px; }
+  .job-meta { font-size: 9pt; color: #6b7280; text-align: right; line-height: 1.6; }
+  ul.bullets { margin-top: 8px; padding-left: 18px; }
+  ul.bullets li { margin-bottom: 4px; font-size: 9.8pt; color: #374151; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+  .tag {
+    font-size: 8pt;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: #f0fdfa;
+    color: #0f766e;
+    border: 1px solid #99f6e4;
+    font-weight: 600;
+  }
+
+  /* PROJECTS */
+  .project { margin-bottom: 12px; }
+  .project-title { font-size: 10.5pt; font-weight: 700; }
+  .project-sub { font-size: 9pt; color: #0d9488; font-weight: 600; }
+  .project-desc { font-size: 9.5pt; color: #4b5563; margin-top: 3px; line-height: 1.5; }
+
+  /* SKILLS GRID */
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; }
+  .skill-cat .cat-label { font-size: 9pt; font-weight: 700; color: #111827; margin-bottom: 5px; }
+  .skill-pills { display: flex; flex-wrap: wrap; gap: 3px; }
+  .skill-pills span {
+    font-size: 8pt;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: #f0fdfa;
+    color: #0f766e;
+    border: 1px solid #99f6e4;
+  }
+  .learning {
+    margin-top: 8px;
+    font-size: 9pt;
+    color: #6b7280;
+  }
+  .learning strong { color: #111827; }
+
+  /* EDUCATION */
+  .edu-item { margin-bottom: 10px; }
+  .edu-row { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px; }
+  .edu-degree { font-size: 10.5pt; font-weight: 700; }
+  .edu-period { font-size: 9pt; color: #6b7280; }
+  .edu-inst { font-size: 9.5pt; color: #0d9488; font-weight: 600; }
+  .badge {
+    display: inline-block;
+    font-size: 7.5pt;
+    padding: 1px 8px;
+    border-radius: 10px;
+    margin-left: 6px;
+    font-weight: 700;
+    vertical-align: middle;
+  }
+  .badge-green { background: #d1fae5; color: #065f46; }
+  .badge-gray  { background: #f3f4f6; color: #4b5563; }
+  .edu-highlights { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 5px; }
+  .edu-highlights span {
+    font-size: 8pt;
+    padding: 2px 7px;
+    background: #f0fdfa;
+    color: #0f766e;
+    border: 1px solid #99f6e4;
+    border-radius: 4px;
+  }
+
+  /* PRINT */
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .print-btn { display: none; }
+    .page { padding: 28px 36px; }
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">🖨️ Save as PDF</button>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <h1>Maria <span>Murad</span></h1>
+    <div class="title-line">AI Engineer &nbsp;·&nbsp; Full-Stack Developer &nbsp;·&nbsp; Agentic AI Specialist</div>
+    <div class="contact-row">
+      <span>📍 Karachi, Pakistan</span>
+      <a href="mailto:mariamohsinchanna@gmail.com">mariamohsinchanna@gmail.com</a>
+      <span>+92 333 3141777</span>
+      <a href="https://github.com/MariaMohsin">github.com/MariaMohsin</a>
+      <a href="https://my-latest-maria-murad-portfolio.vercel.app">my-latest-maria-murad-portfolio.vercel.app</a>
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <section>
+    <h2>Professional Summary</h2>
+    <p class="summary-text">
+      Results-driven AI Engineer building production-grade Agentic AI systems, LLM-powered applications,
+      and full-stack platforms. Deep expertise in OpenAI, Gemini, and Claude APIs — turning ambitious ideas
+      into scalable, intelligent products. Available for full-time roles on-site, hybrid, or remote globally.
+    </p>
+    <div class="stats">
+      <div class="stat"><div class="num">3+</div><div class="lbl">Years Building</div></div>
+      <div class="stat"><div class="num">15+</div><div class="lbl">AI Projects</div></div>
+      <div class="stat"><div class="num">10+</div><div class="lbl">APIs Integrated</div></div>
+      <div class="stat"><div class="num">4</div><div class="lbl">LLM Providers</div></div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section>
+    <h2>Experience</h2>
+    <div class="job-header">
+      <div>
+        <div class="job-title">AI Engineer</div>
+        <div class="job-company">Freelance / Self-Directed Projects</div>
+      </div>
+      <div class="job-meta">Karachi, Pakistan &nbsp;|&nbsp; 2023 – Present</div>
+    </div>
+    <ul class="bullets">
+      <li>Architected multi-agent AI systems with autonomous task delegation and human-in-the-loop approval gates.</li>
+      <li>Built AI Content Automation pipelines using Playwright for browser-driven content creation at scale.</li>
+      <li>Developed social media automation systems integrating Meta API and Twitter API with AI-generated copy.</li>
+      <li>Engineered full-stack AI applications with RAG pipelines, vector search, and FastAPI backends.</li>
+      <li>Integrated OpenAI, Gemini, and Claude APIs for diverse LLM-powered workflows across multiple domains.</li>
+      <li>Implemented MCP (Model Context Protocol) for structured agent-to-tool communication.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">OpenAI</span>
+      <span class="tag">Gemini</span><span class="tag">Claude</span><span class="tag">MCP</span>
+      <span class="tag">Playwright</span><span class="tag">Next.js</span><span class="tag">TypeScript</span>
+      <span class="tag">Docker</span>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section>
+    <h2>Key Projects</h2>
+
+    <div class="project">
+      <div class="project-title">AI Autonomous Employee System <span style="font-weight:400;color:#6b7280;font-size:9pt;">— Multi-Agent AI Platform</span></div>
+      <div class="project-desc">Enterprise-grade multi-agent automation with autonomous task delegation, human-in-the-loop approval workflows, scheduling engine, and fault-recovery mechanisms via MCP protocol.</div>
+      <div class="tags"><span class="tag">Python</span><span class="tag">OpenAI</span><span class="tag">Gemini</span><span class="tag">MCP</span><span class="tag">Playwright</span></div>
+    </div>
+
+    <div class="project">
+      <div class="project-title">E-Commerce & RAG Chatbot App <span style="font-weight:400;color:#6b7280;font-size:9pt;">— Full-Stack AI Platform</span></div>
+      <div class="project-desc">Full-stack e-commerce platform with an embedded AI chatbot powered by Retrieval-Augmented Generation. Vector search enables accurate product Q&A and personalised recommendations.</div>
+      <div class="tags"><span class="tag">Next.js</span><span class="tag">FastAPI</span><span class="tag">Vector DB</span><span class="tag">OpenAI</span></div>
+    </div>
+
+    <div class="project">
+      <div class="project-title">Social Media & Odoo Automation <span style="font-weight:400;color:#6b7280;font-size:9pt;">— API Automation System</span></div>
+      <div class="project-desc">Automated multi-platform social media posting with AI-generated content, plus Odoo ERP financial automation via JSON-RPC for streamlined business operations.</div>
+      <div class="tags"><span class="tag">Meta API</span><span class="tag">Twitter API</span><span class="tag">Python</span><span class="tag">JSON-RPC</span><span class="tag">Odoo</span></div>
+    </div>
+
+    <div class="project">
+      <div class="project-title">Live Frontend Project <span style="font-weight:400;color:#6b7280;font-size:9pt;">— Deployed on Vercel</span></div>
+      <div class="project-desc">Production-ready Next.js application with modern responsive UI. Live at: frontend-maria-murads-projects.vercel.app</div>
+      <div class="tags"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Tailwind CSS</span><span class="tag">Vercel</span></div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <h2>Skills & Stack</h2>
+    <div class="skills-grid">
+      <div class="skill-cat">
+        <div class="cat-label">AI & LLM</div>
+        <div class="skill-pills">
+          <span>OpenAI API</span><span>Gemini API</span><span>Claude API</span>
+          <span>LangChain</span><span>RAG</span><span>MCP</span>
+          <span>Vector DBs</span><span>Prompt Engineering</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="cat-label">Backend</div>
+        <div class="skill-pills">
+          <span>Python</span><span>FastAPI</span><span>REST APIs</span>
+          <span>WebSockets</span><span>PostgreSQL</span><span>Celery</span>
+          <span>Docker</span><span>JSON-RPC</span>
+        </div>
+      </div>
+      <div class="skill-cat" style="margin-top:8px;">
+        <div class="cat-label">Frontend</div>
+        <div class="skill-pills">
+          <span>Next.js</span><span>React</span><span>TypeScript</span>
+          <span>Tailwind CSS</span><span>Framer Motion</span><span>HTML/CSS</span>
+        </div>
+      </div>
+      <div class="skill-cat" style="margin-top:8px;">
+        <div class="cat-label">Automation & DevOps</div>
+        <div class="skill-pills">
+          <span>Playwright</span><span>Meta API</span><span>Twitter API</span>
+          <span>GitHub Actions</span><span>Vercel</span><span>EC2 / AWS</span><span>CI/CD</span>
+        </div>
+      </div>
+    </div>
+    <div class="learning" style="margin-top:10px;">
+      <strong>Currently Learning:</strong> Kubernetes &nbsp;·&nbsp; AWS Bedrock &nbsp;·&nbsp; LangGraph &nbsp;·&nbsp; Crew AI
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <h2>Education</h2>
+
+    <div class="edu-item">
+      <div class="edu-row">
+        <div>
+          <span class="edu-degree">Diploma in AI Engineering</span>
+          <span class="badge badge-green">In Progress</span>
+        </div>
+        <span class="edu-period">2024 – Present</span>
+      </div>
+      <div class="edu-inst">Governor House Karachi</div>
+      <div class="edu-highlights">
+        <span>Agentic AI & Multi-Agent Systems</span>
+        <span>LLM Integration & Prompt Engineering</span>
+        <span>Cloud & DevOps (AWS, Docker)</span>
+        <span>Full-Stack Web Development</span>
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-row">
+        <div>
+          <span class="edu-degree">Master of Arts — English</span>
+          <span class="badge badge-gray">Completed</span>
+        </div>
+        <span class="edu-period">2015</span>
+      </div>
+      <div class="edu-inst">Shah Abdul Latif University</div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
