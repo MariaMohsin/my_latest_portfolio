@@ -25,6 +25,22 @@ export const metadata: Metadata = {
     "FastAPI",
     "Maria Murad",
   ],
+  openGraph: {
+    title: "Maria Murad — AI Engineer & Full-Stack Developer",
+    description:
+      "Building production-grade Agentic AI systems, LLM-powered apps, and full-stack platforms. Based in Karachi, Pakistan.",
+    url: "https://maria-murad-portfolio.vercel.app",
+    siteName: "Maria Murad Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Maria Murad — AI Engineer & Full-Stack Developer",
+    description:
+      "Building production-grade Agentic AI systems, LLM-powered apps, and full-stack platforms.",
+  },
+  metadataBase: new URL("https://maria-murad-portfolio.vercel.app"),
 };
 
 export default function RootLayout({
