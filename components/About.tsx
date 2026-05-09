@@ -42,7 +42,7 @@ export default function About() {
   return (
     <section id="about" className="py-24 px-6 relative">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-0 top-1/2 w-72 h-72 bg-indigo-500/5 rounded-full blur-3xl" />
+        <div className="absolute left-0 top-1/2 w-72 h-72 bg-teal-500/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-6xl mx-auto" ref={ref}>
@@ -52,16 +52,16 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-xs font-semibold tracking-widest uppercase text-indigo-400 mb-3 block">
+          <span className="text-xs font-semibold tracking-widest uppercase text-teal-400 mb-3 block">
             About Me
           </span>
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-4">
             Professional{" "}
-            <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">
               Summary
             </span>
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-indigo-500 to-violet-600 rounded-full mx-auto" />
+          <div className="w-16 h-1 bg-gradient-to-r from-teal-500 to-emerald-600 rounded-full mx-auto" />
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
@@ -72,7 +72,7 @@ export default function About() {
           >
             <p className="text-slate-300 text-lg leading-relaxed mb-6">
               Results-driven{" "}
-              <span className="text-indigo-300 font-semibold">
+              <span className="text-teal-300 font-semibold">
                 AI Engineer and Full-Stack Developer
               </span>{" "}
               with hands-on experience building production-grade Agentic AI
@@ -80,7 +80,7 @@ export default function About() {
             </p>
             <p className="text-slate-400 leading-relaxed mb-6">
               Proficient in{" "}
-              <span className="text-violet-300 font-medium">
+              <span className="text-emerald-300 font-medium">
                 Python, FastAPI, TypeScript, and Next.js
               </span>{" "}
               with deep expertise in OpenAI, Gemini, and Claude API integrations.
@@ -105,9 +105,9 @@ export default function About() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
-                className="rounded-2xl border border-white/8 bg-white/3 backdrop-blur-sm p-6 text-center hover:border-indigo-500/30 hover:bg-white/5 transition-all"
+                className="rounded-2xl border border-teal-500/20 bg-teal-500/5 backdrop-blur-sm p-6 text-center hover:border-teal-500/40 hover:bg-teal-500/10 transition-all"
               >
-                <div className="text-4xl font-black bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent mb-1">
+                <div className="text-4xl font-black bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent mb-1">
                   {s.value}
                 </div>
                 <div className="text-xs text-slate-500 font-medium uppercase tracking-wider">
@@ -125,10 +125,10 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
-              className="rounded-2xl border border-white/8 bg-white/3 backdrop-blur-sm p-6 hover:border-indigo-500/30 hover:bg-white/5 transition-all group"
+              className="rounded-2xl border border-white/8 bg-white/3 backdrop-blur-sm p-6 hover:border-teal-500/30 hover:bg-white/5 transition-all group"
             >
-              <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center mb-4 group-hover:bg-indigo-500/20 transition-colors">
-                <h.icon size={18} className="text-indigo-400" />
+              <div className="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-4 group-hover:bg-teal-500/20 transition-colors">
+                <h.icon size={18} className="text-teal-400" />
               </div>
               <h3 className="font-semibold text-white text-sm mb-2">
                 {h.title}

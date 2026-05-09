@@ -3,49 +3,50 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-const categories = [
-  {
-    label: "AI & LLM",
-    color: "from-violet-500 to-purple-600",
-    bg: "bg-violet-500/10",
-    border: "border-violet-500/20",
-    text: "text-violet-300",
-    skills: ["OpenAI API", "Gemini API", "Claude API", "LangChain", "RAG", "MCP", "Vector DBs", "Prompt Engineering"],
-  },
-  {
-    label: "Backend",
-    color: "from-indigo-500 to-blue-600",
-    bg: "bg-indigo-500/10",
-    border: "border-indigo-500/20",
-    text: "text-indigo-300",
-    skills: ["Python", "FastAPI", "REST APIs", "WebSockets", "PostgreSQL", "Celery", "Docker", "JSON-RPC"],
-  },
-  {
-    label: "Frontend",
-    color: "from-cyan-500 to-indigo-500",
-    bg: "bg-cyan-500/10",
-    border: "border-cyan-500/20",
-    text: "text-cyan-300",
-    skills: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "HTML/CSS", "Responsive Design"],
-  },
-  {
-    label: "Automation & DevOps",
-    color: "from-emerald-500 to-teal-600",
-    bg: "bg-emerald-500/10",
-    border: "border-emerald-500/20",
-    text: "text-emerald-300",
-    skills: ["Playwright", "Meta API", "Twitter API", "Docker", "GitHub Actions", "Vercel", "EC2", "CI/CD"],
-  },
+const techStack = [
+  // AI & LLM
+  { name: "OpenAI", abbr: "OAI", cat: "AI & LLM", color: "bg-teal-500/15 border-teal-500/30 text-teal-300" },
+  { name: "Gemini", abbr: "GEM", cat: "AI & LLM", color: "bg-teal-500/15 border-teal-500/30 text-teal-300" },
+  { name: "Claude API", abbr: "ANT", cat: "AI & LLM", color: "bg-teal-500/15 border-teal-500/30 text-teal-300" },
+  { name: "LangChain", abbr: "LC", cat: "AI & LLM", color: "bg-teal-500/15 border-teal-500/30 text-teal-300" },
+  { name: "RAG", abbr: "RAG", cat: "AI & LLM", color: "bg-teal-500/15 border-teal-500/30 text-teal-300" },
+  { name: "MCP", abbr: "MCP", cat: "AI & LLM", color: "bg-teal-500/15 border-teal-500/30 text-teal-300" },
+  { name: "Vector DB", abbr: "VDB", cat: "AI & LLM", color: "bg-teal-500/15 border-teal-500/30 text-teal-300" },
+  { name: "Prompt Eng.", abbr: "PE", cat: "AI & LLM", color: "bg-teal-500/15 border-teal-500/30 text-teal-300" },
+  // Backend
+  { name: "Python", abbr: "PY", cat: "Backend", color: "bg-blue-500/15 border-blue-500/30 text-blue-300" },
+  { name: "FastAPI", abbr: "FA", cat: "Backend", color: "bg-blue-500/15 border-blue-500/30 text-blue-300" },
+  { name: "PostgreSQL", abbr: "PG", cat: "Backend", color: "bg-blue-500/15 border-blue-500/30 text-blue-300" },
+  { name: "Docker", abbr: "DK", cat: "Backend", color: "bg-blue-500/15 border-blue-500/30 text-blue-300" },
+  { name: "Celery", abbr: "CL", cat: "Backend", color: "bg-blue-500/15 border-blue-500/30 text-blue-300" },
+  { name: "WebSockets", abbr: "WS", cat: "Backend", color: "bg-blue-500/15 border-blue-500/30 text-blue-300" },
+  { name: "REST APIs", abbr: "API", cat: "Backend", color: "bg-blue-500/15 border-blue-500/30 text-blue-300" },
+  { name: "JSON-RPC", abbr: "RPC", cat: "Backend", color: "bg-blue-500/15 border-blue-500/30 text-blue-300" },
+  // Frontend
+  { name: "Next.js", abbr: "NX", cat: "Frontend", color: "bg-cyan-500/15 border-cyan-500/30 text-cyan-300" },
+  { name: "React", abbr: "RE", cat: "Frontend", color: "bg-cyan-500/15 border-cyan-500/30 text-cyan-300" },
+  { name: "TypeScript", abbr: "TS", cat: "Frontend", color: "bg-cyan-500/15 border-cyan-500/30 text-cyan-300" },
+  { name: "Tailwind CSS", abbr: "TW", cat: "Frontend", color: "bg-cyan-500/15 border-cyan-500/30 text-cyan-300" },
+  { name: "Framer Motion", abbr: "FM", cat: "Frontend", color: "bg-cyan-500/15 border-cyan-500/30 text-cyan-300" },
+  { name: "HTML / CSS", abbr: "HTML", cat: "Frontend", color: "bg-cyan-500/15 border-cyan-500/30 text-cyan-300" },
+  // Automation & DevOps
+  { name: "Playwright", abbr: "PW", cat: "DevOps", color: "bg-emerald-500/15 border-emerald-500/30 text-emerald-300" },
+  { name: "Meta API", abbr: "MT", cat: "DevOps", color: "bg-emerald-500/15 border-emerald-500/30 text-emerald-300" },
+  { name: "Twitter API", abbr: "TW", cat: "DevOps", color: "bg-emerald-500/15 border-emerald-500/30 text-emerald-300" },
+  { name: "GitHub Actions", abbr: "GH", cat: "DevOps", color: "bg-emerald-500/15 border-emerald-500/30 text-emerald-300" },
+  { name: "Vercel", abbr: "VC", cat: "DevOps", color: "bg-emerald-500/15 border-emerald-500/30 text-emerald-300" },
+  { name: "EC2 / AWS", abbr: "EC2", cat: "DevOps", color: "bg-emerald-500/15 border-emerald-500/30 text-emerald-300" },
+  { name: "CI / CD", abbr: "CI", cat: "DevOps", color: "bg-emerald-500/15 border-emerald-500/30 text-emerald-300" },
 ];
 
-const proficiencies = [
-  { skill: "Agentic AI Development", level: 92 },
-  { skill: "Python / FastAPI", level: 90 },
-  { skill: "LLM API Integration", level: 95 },
-  { skill: "Next.js / TypeScript", level: 85 },
-  { skill: "Automation & Playwright", level: 88 },
-  { skill: "Docker & Deployment", level: 78 },
+const categories = [
+  { label: "AI & LLM", color: "from-teal-500 to-cyan-600", dot: "bg-teal-400" },
+  { label: "Backend", color: "from-blue-500 to-blue-600", dot: "bg-blue-400" },
+  { label: "Frontend", color: "from-cyan-500 to-teal-600", dot: "bg-cyan-400" },
+  { label: "DevOps", color: "from-emerald-500 to-green-600", dot: "bg-emerald-400" },
 ];
+
+const learning = ["Kubernetes", "AWS Bedrock", "LangGraph", "Crew AI"];
 
 export default function Skills() {
   const ref = useRef(null);
@@ -54,8 +55,8 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 px-6 relative">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute right-0 bottom-1/4 w-80 h-80 bg-violet-500/5 rounded-full blur-3xl" />
-        <div className="absolute left-0 top-1/4 w-60 h-60 bg-indigo-500/5 rounded-full blur-3xl" />
+        <div className="absolute right-0 bottom-1/4 w-80 h-80 bg-emerald-500/5 rounded-full blur-3xl" />
+        <div className="absolute left-0 top-1/4 w-60 h-60 bg-teal-500/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-6xl mx-auto" ref={ref}>
@@ -65,122 +66,75 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-xs font-semibold tracking-widest uppercase text-indigo-400 mb-3 block">
+          <span className="text-xs font-semibold tracking-widest uppercase text-teal-400 mb-3 block">
             Technical Expertise
           </span>
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-4">
             Skills &{" "}
-            <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">
               Stack
             </span>
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-indigo-500 to-violet-600 rounded-full mx-auto" />
+          <div className="w-16 h-1 bg-gradient-to-r from-teal-500 to-emerald-600 rounded-full mx-auto" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-10">
-          {/* Skill categories */}
-          <div className="space-y-5">
-            {categories.map((cat, ci) => (
-              <motion.div
-                key={cat.label}
-                initial={{ opacity: 0, x: -20 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.2 + ci * 0.1 }}
-                className="rounded-2xl border border-white/8 bg-white/3 backdrop-blur-sm p-5 hover:border-white/12 hover:bg-white/5 transition-all"
-              >
-                <div className="flex items-center gap-2 mb-4">
-                  <div
-                    className={`h-1 w-8 rounded-full bg-gradient-to-r ${cat.color}`}
-                  />
-                  <span className="text-xs font-bold uppercase tracking-widest text-slate-400">
-                    {cat.label}
-                  </span>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {cat.skills.map((s, si) => (
-                    <motion.span
-                      key={s}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={inView ? { opacity: 1, scale: 1 } : {}}
-                      transition={{
-                        duration: 0.3,
-                        delay: 0.3 + ci * 0.1 + si * 0.04,
-                      }}
-                      className={`px-3 py-1.5 text-xs font-medium rounded-lg ${cat.bg} border ${cat.border} ${cat.text}`}
-                    >
-                      {s}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
+        {/* Category legend */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="flex flex-wrap justify-center gap-4 mb-10"
+        >
+          {categories.map((cat) => (
+            <div key={cat.label} className="flex items-center gap-2">
+              <div className={`w-2.5 h-2.5 rounded-full ${cat.dot}`} />
+              <span className="text-xs text-slate-400 font-medium">{cat.label}</span>
+            </div>
+          ))}
+        </motion.div>
 
-          {/* Proficiency bars */}
-          <div className="space-y-6">
-            <motion.h3
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : {}}
-              transition={{ delay: 0.3 }}
-              className="text-sm font-semibold text-slate-400 uppercase tracking-widest"
-            >
-              Core Proficiencies
-            </motion.h3>
-            {proficiencies.map((p, i) => (
-              <motion.div
-                key={p.skill}
-                initial={{ opacity: 0, x: 20 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-              >
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium text-slate-300">
-                    {p.skill}
-                  </span>
-                  <span className="text-xs font-semibold text-indigo-400">
-                    {p.level}%
-                  </span>
-                </div>
-                <div className="h-1.5 w-full rounded-full bg-white/5 overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={inView ? { width: `${p.level}%` } : {}}
-                    transition={{
-                      duration: 1,
-                      delay: 0.5 + i * 0.1,
-                      ease: [0.25, 0.46, 0.45, 0.94] as const,
-                    }}
-                    className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-violet-500"
-                  />
-                </div>
-              </motion.div>
-            ))}
-
+        {/* Tech icon grid */}
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 gap-3 mb-10">
+          {techStack.map((tech, i) => (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.9 }}
-              className="mt-8 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-6"
+              key={`${tech.name}-${i}`}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.3, delay: 0.2 + i * 0.03 }}
+              className={`flex flex-col items-center gap-2 p-3 rounded-xl border ${tech.color} hover:scale-105 transition-all cursor-default`}
             >
-              <p className="text-xs font-semibold uppercase tracking-widest text-indigo-400 mb-3">
-                Currently Learning
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {["Kubernetes", "AWS Bedrock", "LangGraph", "Crew AI"].map(
-                  (s) => (
-                    <span
-                      key={s}
-                      className="px-3 py-1 text-xs font-medium rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 flex items-center gap-1.5"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
-                      {s}
-                    </span>
-                  )
-                )}
+              <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center">
+                <span className="text-[10px] font-black tracking-tight">{tech.abbr}</span>
               </div>
+              <span className="text-[10px] text-slate-400 text-center leading-tight font-medium">
+                {tech.name}
+              </span>
             </motion.div>
-          </div>
+          ))}
         </div>
+
+        {/* Currently Learning */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.9 }}
+          className="rounded-2xl border border-teal-500/20 bg-teal-500/5 p-6 text-center"
+        >
+          <p className="text-xs font-semibold uppercase tracking-widest text-teal-400 mb-3">
+            Currently Learning
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {learning.map((s) => (
+              <span
+                key={s}
+                className="px-4 py-1.5 text-xs font-medium rounded-lg bg-teal-500/10 border border-teal-500/20 text-teal-300 flex items-center gap-1.5"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+                {s}
+              </span>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

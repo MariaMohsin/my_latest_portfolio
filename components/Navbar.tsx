@@ -6,6 +6,7 @@ import { Menu, X, BrainCircuit } from "lucide-react";
 
 const links = [
   { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
@@ -36,11 +37,11 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#hero" className="flex items-center gap-2 group">
-          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shadow-lg shadow-indigo-500/25">
+          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-teal-500 to-emerald-600 flex items-center justify-center shadow-lg shadow-teal-500/25">
             <BrainCircuit size={18} className="text-white" />
           </div>
           <span className="font-bold text-white text-lg tracking-tight">
-            Maria<span className="text-indigo-400">.</span>
+            Maria<span className="text-teal-400">.</span>
           </span>
         </a>
 
@@ -56,7 +57,7 @@ export default function Navbar() {
           ))}
           <a
             href="#contact"
-            className="ml-4 px-5 py-2 text-sm font-semibold bg-gradient-to-r from-indigo-500 to-violet-600 text-white rounded-lg shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-105 transition-all"
+            className="ml-4 px-5 py-2 text-sm font-semibold bg-gradient-to-r from-teal-500 to-emerald-600 text-white rounded-lg shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 hover:scale-105 transition-all"
           >
             Hire Me
           </a>
@@ -93,7 +94,7 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="mt-2 py-2 px-4 text-center font-semibold bg-gradient-to-r from-indigo-500 to-violet-600 text-white rounded-lg"
+                className="mt-2 py-2 px-4 text-center font-semibold bg-gradient-to-r from-teal-500 to-emerald-600 text-white rounded-lg"
               >
                 Hire Me
               </a>

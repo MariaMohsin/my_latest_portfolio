@@ -34,11 +34,11 @@ body {
   background: #020817;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #6366f1, #8b5cf6);
+  background: linear-gradient(180deg, #14b8a6, #10b981);
   border-radius: 3px;
 }
 
 ::selection {
-  background: rgba(99, 102, 241, 0.3);
+  background: rgba(20, 184, 166, 0.3);
   color: #e2e8f0;
 }

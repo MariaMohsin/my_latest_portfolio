@@ -12,11 +12,11 @@ export default function Footer() {
         <div className="grid sm:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-500 to-emerald-600 flex items-center justify-center">
                 <BrainCircuit size={15} className="text-white" />
               </div>
               <span className="font-bold text-white">
-                Maria<span className="text-indigo-400">.</span>
+                Maria<span className="text-teal-400">.</span>
               </span>
             </div>
             <p className="text-xs text-slate-500 leading-relaxed">
@@ -30,12 +30,12 @@ export default function Footer() {
               Quick Links
             </p>
             <div className="flex flex-col gap-2">
-              {["About", "Experience", "Projects", "Skills", "Education", "Contact"].map(
+              {["About", "Services", "Experience", "Projects", "Skills", "Education", "Contact"].map(
                 (l) => (
                   <a
                     key={l}
                     href={`#${l.toLowerCase()}`}
-                    className="text-xs text-slate-500 hover:text-indigo-400 transition-colors"
+                    className="text-xs text-slate-500 hover:text-teal-400 transition-colors"
                   >
                     {l}
                   </a>
@@ -51,14 +51,14 @@ export default function Footer() {
             <div className="flex flex-col gap-2">
               <a
                 href="mailto:mariamohsinchanna@gmail.com"
-                className="flex items-center gap-2 text-xs text-slate-500 hover:text-indigo-400 transition-colors"
+                className="flex items-center gap-2 text-xs text-slate-500 hover:text-teal-400 transition-colors"
               >
                 <Mail size={12} />
                 mariamohsinchanna@gmail.com
               </a>
               <a
                 href="tel:+923333141777"
-                className="flex items-center gap-2 text-xs text-slate-500 hover:text-indigo-400 transition-colors"
+                className="flex items-center gap-2 text-xs text-slate-500 hover:text-teal-400 transition-colors"
               >
                 <Phone size={12} />
                 +92 333 3141777
@@ -67,7 +67,7 @@ export default function Footer() {
                 href="https://github.com/MariaMohsin"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs text-slate-500 hover:text-indigo-400 transition-colors"
+                className="flex items-center gap-2 text-xs text-slate-500 hover:text-teal-400 transition-colors"
               >
                 <GitBranch size={12} />
                 github.com/MariaMohsin
@@ -81,7 +81,7 @@ export default function Footer() {
             © {year} Maria Murad. All rights reserved.
           </p>
           <p className="text-xs text-slate-600 flex items-center gap-1">
-            Built with <Heart size={10} className="text-indigo-500 mx-0.5" /> using Next.js & Framer Motion
+            Built with <Heart size={10} className="text-teal-500 mx-0.5" /> using Next.js & Framer Motion
           </p>
         </div>
       </div>

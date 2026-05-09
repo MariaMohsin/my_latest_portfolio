@@ -52,7 +52,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 px-6 relative">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[700px] h-[400px] bg-gradient-to-t from-indigo-600/8 to-transparent rounded-full blur-3xl" />
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[700px] h-[400px] bg-gradient-to-t from-teal-600/8 to-transparent rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-5xl mx-auto" ref={ref}>
@@ -62,20 +62,20 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-xs font-semibold tracking-widest uppercase text-indigo-400 mb-3 block">
-            Let's Connect
+          <span className="text-xs font-semibold tracking-widest uppercase text-teal-400 mb-3 block">
+            Let&apos;s Connect
           </span>
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-4">
             Get in{" "}
-            <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">
               Touch
             </span>
           </h2>
           <p className="text-slate-400 max-w-xl mx-auto text-base">
             Open to full-time AI Engineer and Full-Stack Developer roles.
-            Let's discuss how I can contribute to your team.
+            Let&apos;s discuss how I can contribute to your team.
           </p>
-          <div className="w-16 h-1 bg-gradient-to-r from-indigo-500 to-violet-600 rounded-full mx-auto mt-4" />
+          <div className="w-16 h-1 bg-gradient-to-r from-teal-500 to-emerald-600 rounded-full mx-auto mt-4" />
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-10">
@@ -91,9 +91,9 @@ export default function Contact() {
                 Ready to Collaborate
               </h3>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Whether you're building an AI-powered product, need a
+                Whether you&apos;re building an AI-powered product, need a
                 full-stack developer, or looking for an Agentic AI specialist,
-                I'd love to hear from you.
+                I&apos;d love to hear from you.
               </p>
               <div className="space-y-4">
                 {contactInfo.map((c, i) => (
@@ -104,8 +104,8 @@ export default function Contact() {
                     transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
                     className="flex items-center gap-4"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center flex-shrink-0">
-                      <c.icon size={16} className="text-indigo-400" />
+                    <div className="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center flex-shrink-0">
+                      <c.icon size={16} className="text-teal-400" />
                     </div>
                     <div>
                       <p className="text-xs text-slate-500 mb-0.5">{c.label}</p>
@@ -114,7 +114,7 @@ export default function Contact() {
                           href={c.href}
                           target={c.href.startsWith("http") ? "_blank" : undefined}
                           rel="noopener noreferrer"
-                          className="text-sm text-slate-300 hover:text-indigo-300 transition-colors"
+                          className="text-sm text-slate-300 hover:text-teal-300 transition-colors"
                         >
                           {c.value}
                         </a>
@@ -127,8 +127,8 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-6">
-              <p className="text-xs font-semibold uppercase tracking-widest text-indigo-400 mb-3">
+            <div className="rounded-2xl border border-teal-500/20 bg-teal-500/5 p-6">
+              <p className="text-xs font-semibold uppercase tracking-widest text-teal-400 mb-3">
                 Availability
               </p>
               <div className="flex items-center gap-2">
@@ -164,7 +164,7 @@ export default function Contact() {
                     required
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 focus:bg-white/8 transition-all"
+                    className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-teal-500/50 focus:bg-white/8 transition-all"
                     placeholder="John Doe"
                   />
                 </div>
@@ -177,7 +177,7 @@ export default function Contact() {
                     required
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 focus:bg-white/8 transition-all"
+                    className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-teal-500/50 focus:bg-white/8 transition-all"
                     placeholder="john@company.com"
                   />
                 </div>
@@ -190,7 +190,7 @@ export default function Contact() {
                   type="text"
                   value={form.subject}
                   onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                  className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 focus:bg-white/8 transition-all"
+                  className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-teal-500/50 focus:bg-white/8 transition-all"
                   placeholder="Job Opportunity / Collaboration"
                 />
               </div>
@@ -203,13 +203,13 @@ export default function Contact() {
                   rows={5}
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-indigo-500/50 focus:bg-white/8 transition-all resize-none"
+                  className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-teal-500/50 focus:bg-white/8 transition-all resize-none"
                   placeholder="Tell me about the role or project..."
                 />
               </div>
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-indigo-500 to-violet-600 text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-100 transition-all"
+                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-teal-500 to-emerald-600 text-white shadow-lg shadow-teal-500/25 hover:shadow-teal-500/40 hover:scale-[1.02] active:scale-100 transition-all"
               >
                 {sent ? (
                   <>

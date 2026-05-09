@@ -20,7 +20,7 @@ const education = [
       "Cloud & DevOps (AWS, Docker)",
       "Full-Stack Web Development",
     ],
-    gradient: "from-indigo-500 to-violet-600",
+    gradient: "from-teal-500 to-emerald-600",
   },
   {
     icon: BookOpen,
@@ -47,7 +47,7 @@ export default function Education() {
   return (
     <section id="education" className="py-24 px-6 relative">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-1/4 bottom-0 w-72 h-72 bg-indigo-500/5 rounded-full blur-3xl" />
+        <div className="absolute left-1/4 bottom-0 w-72 h-72 bg-teal-500/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-4xl mx-auto" ref={ref}>
@@ -57,13 +57,13 @@ export default function Education() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-xs font-semibold tracking-widest uppercase text-indigo-400 mb-3 block">
+          <span className="text-xs font-semibold tracking-widest uppercase text-teal-400 mb-3 block">
             Academic Background
           </span>
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-4">
             Education
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-indigo-500 to-violet-600 rounded-full mx-auto" />
+          <div className="w-16 h-1 bg-gradient-to-r from-teal-500 to-emerald-600 rounded-full mx-auto" />
         </motion.div>
 
         <div className="space-y-6">
@@ -73,7 +73,7 @@ export default function Education() {
               initial={{ opacity: 0, y: 25 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-              className="rounded-2xl border border-white/8 bg-white/3 backdrop-blur-sm p-8 hover:border-indigo-500/25 hover:bg-white/5 transition-all"
+              className="rounded-2xl border border-white/8 bg-white/3 backdrop-blur-sm p-8 hover:border-teal-500/25 hover:bg-white/5 transition-all"
             >
               <div className="flex flex-wrap gap-4 items-start mb-5">
                 <div
@@ -92,7 +92,7 @@ export default function Education() {
                       {edu.status}
                     </span>
                   </div>
-                  <p className="text-indigo-400 font-semibold text-sm">
+                  <p className="text-teal-400 font-semibold text-sm">
                     {edu.institution}
                   </p>
                   <div className="flex items-center gap-1.5 mt-1.5">
@@ -112,7 +112,7 @@ export default function Education() {
                     key={h}
                     className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-white/5 border border-white/8 text-slate-400"
                   >
-                    <GraduationCap size={11} className="text-indigo-400" />
+                    <GraduationCap size={11} className="text-teal-400" />
                     {h}
                   </span>
                 ))}

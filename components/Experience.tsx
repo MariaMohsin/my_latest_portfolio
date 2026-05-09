@@ -20,7 +20,7 @@ export default function Experience() {
   return (
     <section id="experience" className="py-24 px-6 relative">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute right-0 top-1/3 w-80 h-80 bg-violet-500/5 rounded-full blur-3xl" />
+        <div className="absolute right-0 top-1/3 w-80 h-80 bg-emerald-500/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-4xl mx-auto" ref={ref}>
@@ -30,13 +30,13 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-xs font-semibold tracking-widest uppercase text-indigo-400 mb-3 block">
+          <span className="text-xs font-semibold tracking-widest uppercase text-teal-400 mb-3 block">
             Work History
           </span>
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-4">
             Experience
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-indigo-500 to-violet-600 rounded-full mx-auto" />
+          <div className="w-16 h-1 bg-gradient-to-r from-teal-500 to-emerald-600 rounded-full mx-auto" />
         </motion.div>
 
         <motion.div
@@ -45,34 +45,32 @@ export default function Experience() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="relative"
         >
-          {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-500/50 via-violet-500/30 to-transparent hidden sm:block" />
+          <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-teal-500/50 via-emerald-500/30 to-transparent hidden sm:block" />
 
           <div className="sm:pl-24 relative">
-            {/* Timeline dot */}
-            <div className="hidden sm:flex absolute left-5 top-8 w-6 h-6 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 items-center justify-center shadow-lg shadow-indigo-500/30 ring-4 ring-[#020817]">
+            <div className="hidden sm:flex absolute left-5 top-8 w-6 h-6 rounded-full bg-gradient-to-br from-teal-500 to-emerald-600 items-center justify-center shadow-lg shadow-teal-500/30 ring-4 ring-[#020817]">
               <div className="w-2 h-2 rounded-full bg-white" />
             </div>
 
-            <div className="rounded-2xl border border-white/8 bg-white/3 backdrop-blur-sm p-8 hover:border-indigo-500/30 hover:bg-white/5 transition-all">
+            <div className="rounded-2xl border border-white/8 bg-white/3 backdrop-blur-sm p-8 hover:border-teal-500/30 hover:bg-white/5 transition-all">
               <div className="flex flex-wrap items-start gap-4 mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-600/20 border border-indigo-500/20 flex items-center justify-center flex-shrink-0">
-                  <Briefcase size={24} className="text-indigo-400" />
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-500/20 to-emerald-600/20 border border-teal-500/20 flex items-center justify-center flex-shrink-0">
+                  <Briefcase size={24} className="text-teal-400" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-xl font-bold text-white">
                     AI Engineer
                   </h3>
-                  <p className="text-indigo-400 font-semibold text-sm mt-0.5">
+                  <p className="text-teal-400 font-semibold text-sm mt-0.5">
                     Freelance / Self-Directed Projects
                   </p>
                   <div className="flex flex-wrap gap-4 mt-2">
                     <span className="flex items-center gap-1.5 text-xs text-slate-500">
-                      <MapPin size={12} className="text-violet-400" />
+                      <MapPin size={12} className="text-emerald-400" />
                       Karachi, Pakistan
                     </span>
                     <span className="flex items-center gap-1.5 text-xs text-slate-500">
-                      <Calendar size={12} className="text-violet-400" />
+                      <Calendar size={12} className="text-emerald-400" />
                       2023 – Present
                     </span>
                   </div>
@@ -93,7 +91,7 @@ export default function Experience() {
                   >
                     <CheckCircle2
                       size={15}
-                      className="text-indigo-400 flex-shrink-0 mt-0.5"
+                      className="text-teal-400 flex-shrink-0 mt-0.5"
                     />
                     <span className="text-sm text-slate-400 leading-relaxed">
                       {item}
@@ -117,7 +115,7 @@ export default function Experience() {
                 ].map((skill) => (
                   <span
                     key={skill}
-                    className="px-2.5 py-1 text-xs font-medium rounded-lg bg-indigo-500/10 border border-indigo-500/15 text-indigo-300"
+                    className="px-2.5 py-1 text-xs font-medium rounded-lg bg-teal-500/10 border border-teal-500/15 text-teal-300"
                   >
                     {skill}
                   </span>
